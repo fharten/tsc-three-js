@@ -16,7 +16,7 @@ import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import type { GLTFResult } from '../types/IslandGLTF';
 
-import islandScene from '../assets/3d/island.glb';
+import islandScene from '/assets/3d/island.glb';
 
 interface pageProps {
   isRotating: boolean;

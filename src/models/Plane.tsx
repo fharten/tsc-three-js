@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import * as THREE from 'three';
 
-import planeScene from '../assets/3d/plane.glb';
+import planeScene from '/assets/3d/plane.glb';
 
 interface PageProps {
   isRotating: boolean;

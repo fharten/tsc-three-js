@@ -7,6 +7,7 @@ import Bird from '../models/Bird';
 import Sky from '../models/Sky';
 import { Island } from '../models/Island';
 import { Plane } from '../models/Plane';
+import { MainBird } from '../models/MainBird';
 
 const Home = () => {
   const audioRef = useRef(new Audio(sakura));
@@ -16,7 +17,7 @@ const Home = () => {
   const [currentStage, setCurrentStage] = useState<number | null>(null);
   const [isRotating, setIsRotating] = useState<boolean>(false);
 
-  const adjustBiplaneForScreenSize = () => {
+  const adjustPlaneForScreenSize = () => {
     let screenScale: [number, number, number],
       screenPosition: [number, number, number];
 
@@ -26,6 +27,22 @@ const Home = () => {
       screenPosition = [0, -1.5, 0];
     } else {
       screenScale = [3, 3, 3];
+      screenPosition = [0, -4, -4];
+    }
+
+    return [screenScale, screenPosition];
+  };
+
+  const adjustMainBirdForScreenSize = () => {
+    let screenScale: [number, number, number],
+      screenPosition: [number, number, number];
+
+    // If screen width is less than 768px, adjust the scale and position
+    if (window.innerWidth < 768) {
+      screenScale = [1.5, 1.5, 1.5];
+      screenPosition = [0, -1.5, 0];
+    } else {
+      screenScale = [1.5, 1.5, 1.5];
       screenPosition = [0, -4, -4];
     }
 
@@ -47,7 +64,8 @@ const Home = () => {
     return [screenScale, screenPosition];
   };
 
-  const [biplaneScale, biplanePosition] = adjustBiplaneForScreenSize();
+  const [planeScale, planePosition] = adjustPlaneForScreenSize();
+  const [mainBirdScale, mainBirdPosition] = adjustMainBirdForScreenSize();
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
 
   return (
@@ -74,8 +92,8 @@ const Home = () => {
             intensity={1}
           />
 
-          <Bird />
-          <Sky isRotating={isRotating} />
+          {/* <Bird /> */}
+          {/* <Sky isRotating={isRotating} /> */}
           <Island
             isRotating={isRotating}
             setIsRotating={setIsRotating}
@@ -84,12 +102,18 @@ const Home = () => {
             rotation={[0.1, 4.7077, 0]}
             scale={islandScale}
           />
-          <Plane
+          <MainBird
             isRotating={isRotating}
-            position={biplanePosition}
+            position={mainBirdPosition}
             rotation={[0, 20.1, 0]}
-            scale={biplaneScale}
+            scale={mainBirdScale}
           />
+          {/* <Plane
+            isRotating={isRotating}
+            position={planePosition}
+            rotation={[0, 20.1, 0]}
+            scale={planeScale}
+          /> */}
         </Suspense>
       </Canvas>
     </section>
