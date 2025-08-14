@@ -27,7 +27,7 @@ const Home = () => {
       screenPosition = [0, -1.5, 0];
     } else {
       screenScale = [1.5, 1.5, 1.5];
-      screenPosition = [0, -4, -4];
+      screenPosition = [0, -3, -4];
     }
 
     return [screenScale, screenPosition];
@@ -57,7 +57,7 @@ const Home = () => {
       screenScale = [0.9, 0.9, 0.9];
       screenPosition = [3.6, -2, -3.419];
     } else {
-      screenScale = [1.5, 1.5, 1.5];
+      screenScale = [2, 2, 2];
       screenPosition = [1.6, -4, -14];
     }
 

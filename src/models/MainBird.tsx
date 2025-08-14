@@ -30,6 +30,13 @@ export function MainBird({ isRotating, ...props }: PageProps) {
     }
   }, [actions, isRotating]);
 
+  useFrame(({ clock }) => {
+    if (!birdRef.current || !isRotating) return;
+    // Update the Y position to simulate bird-like motion using a sine wave
+    birdRef.current.position.y =
+      Math.sin(clock.elapsedTime) * 1 + props.position[1];
+  });
+
   return (
     <mesh {...props} ref={birdRef}>
       // use the primitive element when you want to directly embed a complex 3D
