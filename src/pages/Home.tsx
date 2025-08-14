@@ -8,6 +8,8 @@ import Sky from '../models/Sky';
 import { Island } from '../models/Island';
 import { Plane } from '../models/Plane';
 import { MainBird } from '../models/MainBird';
+import LowPolyBird from '../models/LowPolyBird';
+import { PirateIsland } from '../models/PirateIsland';
 
 const Home = () => {
   const audioRef = useRef(new Audio(sakura));
@@ -55,10 +57,10 @@ const Home = () => {
 
     if (window.innerWidth < 768) {
       screenScale = [0.9, 0.9, 0.9];
-      screenPosition = [0, -6.5, -43.4];
+      screenPosition = [3.6, -2, -3.419];
     } else {
       screenScale = [1, 1, 1];
-      screenPosition = [0, -6.5, -43.4];
+      screenPosition = [3.6, -2, -3.419];
     }
 
     return [screenScale, screenPosition];
@@ -93,8 +95,17 @@ const Home = () => {
           />
 
           {/* <Bird /> */}
-          {/* <Sky isRotating={isRotating} /> */}
-          <Island
+          <Sky isRotating={isRotating} />
+          <LowPolyBird />
+          {/* <Island
+            isRotating={isRotating}
+            setIsRotating={setIsRotating}
+            setCurrentStage={setCurrentStage}
+            position={islandPosition}
+            rotation={[0.1, 4.7077, 0]}
+            scale={islandScale}
+          /> */}
+          <PirateIsland
             isRotating={isRotating}
             setIsRotating={setIsRotating}
             setCurrentStage={setCurrentStage}

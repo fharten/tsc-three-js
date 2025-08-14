@@ -27,7 +27,6 @@ export function MainBird({ isRotating, ...props }: PageProps) {
     } else {
       actions['Armature|ArmatureAction']?.stop();
     }
-    console.log(actions);
   }, [actions, isRotating]);
 
   return (
