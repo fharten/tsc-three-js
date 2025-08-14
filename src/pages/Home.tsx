@@ -3,37 +3,19 @@ import { Suspense, useRef, useState } from 'react';
 
 import sakura from '../assets/sakura.mp3';
 import Loader from '../components/Loader';
-import Bird from '../models/Bird';
 import Sky from '../models/Sky';
-import { Island } from '../models/Island';
-import { Plane } from '../models/Plane';
 import { MainBird } from '../models/MainBird';
 import LowPolyBird from '../models/LowPolyBird';
 import { PirateIsland } from '../models/PirateIsland';
+import HomeInfo from '../components/HomeInfo';
 
 const Home = () => {
   const audioRef = useRef(new Audio(sakura));
   audioRef.current.volume = 0.4;
   audioRef.current.loop = true;
 
-  const [currentStage, setCurrentStage] = useState<number | null>(null);
+  const [currentStage, setCurrentStage] = useState<number | null>(1);
   const [isRotating, setIsRotating] = useState<boolean>(false);
-
-  const adjustPlaneForScreenSize = () => {
-    let screenScale: [number, number, number],
-      screenPosition: [number, number, number];
-
-    // If screen width is less than 768px, adjust the scale and position
-    if (window.innerWidth < 768) {
-      screenScale = [1.5, 1.5, 1.5];
-      screenPosition = [0, -1.5, 0];
-    } else {
-      screenScale = [3, 3, 3];
-      screenPosition = [0, -4, -4];
-    }
-
-    return [screenScale, screenPosition];
-  };
 
   const adjustMainBirdForScreenSize = () => {
     let screenScale: [number, number, number],
@@ -51,6 +33,22 @@ const Home = () => {
     return [screenScale, screenPosition];
   };
 
+  const adjustLowPolyBirdForScreenSize = () => {
+    let screenScale: [number, number, number],
+      screenPosition: [number, number, number];
+
+    // If screen width is less than 768px, adjust the scale and position
+    if (window.innerWidth < 768) {
+      screenScale = [1.5, 1.5, 1.5];
+      screenPosition = [0, -1.5, 0];
+    } else {
+      screenScale = [1.5, 1.5, 1.5];
+      screenPosition = [2, 2, -10];
+    }
+
+    return [screenScale, screenPosition];
+  };
+
   const adjustIslandForScreenSize = () => {
     let screenScale: [number, number, number],
       screenPosition: [number, number, number];
@@ -59,19 +57,24 @@ const Home = () => {
       screenScale = [0.9, 0.9, 0.9];
       screenPosition = [3.6, -2, -3.419];
     } else {
-      screenScale = [1, 1, 1];
-      screenPosition = [3.6, -2, -3.419];
+      screenScale = [1.5, 1.5, 1.5];
+      screenPosition = [1.6, -4, -14];
     }
 
     return [screenScale, screenPosition];
   };
 
-  const [planeScale, planePosition] = adjustPlaneForScreenSize();
   const [mainBirdScale, mainBirdPosition] = adjustMainBirdForScreenSize();
+  const [lowPolyBirdScale, lowPolyBirdPosition] =
+    adjustLowPolyBirdForScreenSize();
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
 
   return (
     <section className='w-full h-screen relative'>
+      <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
+        {currentStage && <HomeInfo currentStage={currentStage} />}
+      </div>
+
       <Canvas
         className={`w-full h-screen bg-transparent ${
           isRotating ? 'cursor-grabbing' : 'cursor-grab'
@@ -94,23 +97,17 @@ const Home = () => {
             intensity={1}
           />
 
-          {/* <Bird /> */}
           <Sky isRotating={isRotating} />
-          <LowPolyBird />
-          {/* <Island
-            isRotating={isRotating}
-            setIsRotating={setIsRotating}
-            setCurrentStage={setCurrentStage}
-            position={islandPosition}
-            rotation={[0.1, 4.7077, 0]}
-            scale={islandScale}
-          /> */}
+          <LowPolyBird
+            position={lowPolyBirdPosition}
+            scale={lowPolyBirdScale}
+          />
           <PirateIsland
             isRotating={isRotating}
             setIsRotating={setIsRotating}
             setCurrentStage={setCurrentStage}
             position={islandPosition}
-            rotation={[0.1, 4.7077, 0]}
+            rotation={[0.2, 2.7077, 0]}
             scale={islandScale}
           />
           <MainBird
@@ -119,12 +116,6 @@ const Home = () => {
             rotation={[0, 20.1, 0]}
             scale={mainBirdScale}
           />
-          {/* <Plane
-            isRotating={isRotating}
-            position={planePosition}
-            rotation={[0, 20.1, 0]}
-            scale={planeScale}
-          /> */}
         </Suspense>
       </Canvas>
     </section>
