@@ -17,7 +17,7 @@ const HomeInfo = ({ currentStage }: { currentStage: number | null }) => {
     return (
       <div className='info-box'>
         <p className='font-medium sm:text-xl text-center'>
-          Mein Kater Kormi <br /> folgt mir auf Schritt und Tritt.
+          Meine Qualle Kormi <br /> folgt mir auf Schritt und Tritt.
         </p>
 
         <Link to='/kormi' className='neo-brutalism-white neo-btn'>
@@ -32,7 +32,8 @@ const HomeInfo = ({ currentStage }: { currentStage: number | null }) => {
     return (
       <div className='info-box'>
         <p className='font-medium text-center sm:text-xl'>
-          Von der Heil- und Krankenpflege über die Logopädie zum Dolmetschen.
+          Von der Gesundheits- und Krankenpflege über die Logopädie zum
+          Dolmetschen.
         </p>
 
         <Link to='/vita' className='neo-brutalism-white neo-btn'>
@@ -50,7 +51,7 @@ const HomeInfo = ({ currentStage }: { currentStage: number | null }) => {
           Sehr geheime und ganz ungeheime <br /> Lieblingsorte in Hamburg.
         </p>
 
-        <Link to='/contact' className='neo-brutalism-white neo-btn'>
+        <Link to='/orte' className='neo-brutalism-white neo-btn'>
           Überblick
           <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
         </Link>

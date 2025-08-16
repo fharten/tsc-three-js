@@ -13,26 +13,26 @@ const Navbar = () => {
         <NavLink
           to='/kormi'
           className={({ isActive }) =>
-            isActive ? 'text-blue-500' : 'text-black'
+            isActive ? 'text-blue-500' : 'text-stone-50'
           }
         >
           Kormi
         </NavLink>
         <NavLink
-          to='/projects'
+          to='/vita'
           className={({ isActive }) =>
-            isActive ? 'text-blue-500' : 'text-black'
+            isActive ? 'text-blue-500' : 'text-stone-50'
           }
         >
-          Projects
+          Vita
         </NavLink>
         <NavLink
-          to='/contact'
+          to='/orte'
           className={({ isActive }) =>
-            isActive ? 'text-blue-500' : 'text-black'
+            isActive ? 'text-blue-500' : 'text-stone-50'
           }
         >
-          Contact
+          Lieblingsorte
         </NavLink>
       </nav>
     </header>

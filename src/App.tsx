@@ -1,20 +1,20 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import Kormi from './pages/kormi';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
+import Kormi from './pages/Kormi';
+import Vita from './pages/Vita';
+import Orte from './pages/Orte';
 
 const App = () => {
   return (
-    <main className='bg-slate-300/20'>
+    <main className='bg-stone-900 text-stone-50 min-h-screen'>
       <Router>
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/kormi' element={<Kormi />} />
-          <Route path='/projects' element={<Projects />} />
-          <Route path='/contact' element={<Contact />} />
+          <Route path='/orte' element={<Orte />} />
+          <Route path='/vita' element={<Vita />} />
         </Routes>
       </Router>
     </main>
