@@ -6,10 +6,13 @@ const HomeInfo = ({ currentStage }: { currentStage: number | null }) => {
   if (currentStage === 1)
     return (
       <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5'>
-        Hi, ich bin
-        <span className='font-semibold mx-2 text-white'>Lea.</span>
+        Hi, we're
+        <span className='font-semibold mx-2 text-white'>
+          Tokyo Supreme Coffee
+        </span>
+        ✌️
         <br />
-        Gebärdensprachdolmetscherin aus Hamburg.
+        Your new favorite coffee place.
       </h1>
     );
 
@@ -17,11 +20,12 @@ const HomeInfo = ({ currentStage }: { currentStage: number | null }) => {
     return (
       <div className='info-box'>
         <p className='font-medium sm:text-xl text-center'>
-          Meine Qualle Kormi <br /> folgt mir auf Schritt und Tritt.
+          Our story of passion, tradition, <br /> and community in Tokyo's
+          coffee scene.
         </p>
 
-        <Link to='/kormi' className='neo-brutalism-white neo-btn'>
-          Mehr
+        <Link to='/story' className='neo-brutalism-white neo-btn'>
+          Philosophy
           <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
         </Link>
       </div>
@@ -32,12 +36,12 @@ const HomeInfo = ({ currentStage }: { currentStage: number | null }) => {
     return (
       <div className='info-box'>
         <p className='font-medium text-center sm:text-xl'>
-          Von der Gesundheits- und Krankenpflege über die Logopädie zum
-          Dolmetschen.
+          Your guide to Tokyo's unique coffee culture <br /> and local brewing
+          traditions.
         </p>
 
-        <Link to='/vita' className='neo-brutalism-white neo-btn'>
-          Lebenslauf
+        <Link to='/coffeeguide' className='neo-brutalism-white neo-btn'>
+          Learn more
           <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
         </Link>
       </div>
@@ -48,11 +52,12 @@ const HomeInfo = ({ currentStage }: { currentStage: number | null }) => {
     return (
       <div className='info-box'>
         <p className='font-medium sm:text-xl text-center'>
-          Sehr geheime und ganz ungeheime <br /> Lieblingsorte in Hamburg.
+          Have any questions or want more information? <br /> We're just a few
+          keystrokes away
         </p>
 
-        <Link to='/orte' className='neo-brutalism-white neo-btn'>
-          Überblick
+        <Link to='/contact' className='neo-brutalism-white neo-btn'>
+          Let's talk
           <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
         </Link>
       </div>

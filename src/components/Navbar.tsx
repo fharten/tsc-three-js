@@ -7,32 +7,32 @@ const Navbar = () => {
         to='/'
         className='w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md'
       >
-        <p className='blue-gradient_text'>LN</p>
+        <p className='blue-gradient_text'>TSC</p>
       </NavLink>
       <nav className='flex text-lg gap-7 font-medium'>
         <NavLink
-          to='/kormi'
+          to='/story'
           className={({ isActive }) =>
             isActive ? 'text-blue-500' : 'text-stone-50'
           }
         >
-          Kormi
+          Our Story
         </NavLink>
         <NavLink
-          to='/vita'
+          to='/coffeeguide'
           className={({ isActive }) =>
             isActive ? 'text-blue-500' : 'text-stone-50'
           }
         >
-          Vita
+          Coffee Guide
         </NavLink>
         <NavLink
-          to='/orte'
+          to='/contact'
           className={({ isActive }) =>
             isActive ? 'text-blue-500' : 'text-stone-50'
           }
         >
-          Lieblingsorte
+          Contact
         </NavLink>
       </nav>
     </header>

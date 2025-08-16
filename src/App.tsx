@@ -1,9 +1,9 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import Kormi from './pages/Kormi';
-import Vita from './pages/Vita';
-import Orte from './pages/Orte';
+import Contact from './pages/Contact';
+import CoffeeGuide from './pages/CoffeeGuide';
+import Story from './pages/Story';
 
 const App = () => {
   return (
@@ -12,9 +12,9 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/kormi' element={<Kormi />} />
-          <Route path='/orte' element={<Orte />} />
-          <Route path='/vita' element={<Vita />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/story' element={<Story />} />
+          <Route path='/coffeeguide' element={<CoffeeGuide />} />
         </Routes>
       </Router>
     </main>

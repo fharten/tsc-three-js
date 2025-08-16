@@ -8,6 +8,13 @@ import { MainBird } from '../models/MainBird';
 import LowPolyBird from '../models/LowPolyBird';
 import { PirateIsland } from '../models/PirateIsland';
 import HomeInfo from '../components/HomeInfo';
+import { CyberpunkApartment } from '../models/CyberPunkApartment';
+import SkyCyberpunk from '../models/SkyCyberpunk';
+import { Tokyo } from '../models/Tokyo';
+import SkyCity from '../models/SkyCity';
+import SkyTokyo from '../models/SkyTokyo';
+import SkySkyline from '../models/SkySkyline';
+import { Hovercar } from '../models/Hovercar';
 
 const Home = () => {
   const audioRef = useRef(new Audio(sakura));
@@ -17,7 +24,7 @@ const Home = () => {
   const [currentStage, setCurrentStage] = useState<number | null>(1);
   const [isRotating, setIsRotating] = useState<boolean>(false);
 
-  const adjustMainBirdForScreenSize = () => {
+  const adjustHovercarForScreenSize = () => {
     let screenScale: [number, number, number],
       screenPosition: [number, number, number];
 
@@ -26,7 +33,7 @@ const Home = () => {
       screenScale = [1.5, 1.5, 1.5];
       screenPosition = [0, -1.5, 0];
     } else {
-      screenScale = [1.5, 1.5, 1.5];
+      screenScale = [1, 1, 1];
       screenPosition = [0, -3, -4];
     }
 
@@ -64,9 +71,25 @@ const Home = () => {
     return [screenScale, screenPosition];
   };
 
-  const [mainBirdScale, mainBirdPosition] = adjustMainBirdForScreenSize();
+  const adjustTokyoForScreenSize = () => {
+    let screenScale: [number, number, number],
+      screenPosition: [number, number, number];
+
+    if (window.innerWidth < 768) {
+      screenScale = [0.9, 0.9, 0.9];
+      screenPosition = [3.6, -2, -3.419];
+    } else {
+      screenScale = [2, 2, 2];
+      screenPosition = [-1, 2, -20];
+    }
+
+    return [screenScale, screenPosition];
+  };
+
+  const [hovercarScale, hovercarPosition] = adjustHovercarForScreenSize();
   const [lowPolyBirdScale, lowPolyBirdPosition] =
     adjustLowPolyBirdForScreenSize();
+  const [tokyoScale, tokyoPosition] = adjustTokyoForScreenSize();
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
 
   return (
@@ -82,39 +105,84 @@ const Home = () => {
         camera={{ near: 0.1, far: 1000 }}
       >
         <Suspense fallback={<Loader />}>
-          <directionalLight position={[1, 1, 1]} intensity={1} />
-          <ambientLight intensity={0.5} />
-          <pointLight position={[2.5, -2, -14]} intensity={1} />
-          <spotLight
-            position={[-1, -2, -9]}
-            angle={0.5}
-            penumbra={1}
-            intensity={2}
-          />
-          <hemisphereLight
-            color='#b1e1ff'
-            groundColor='#000000'
+          <directionalLight
+            position={[1, 1, 1]}
             intensity={1}
+            color={'#ad57ff'}
           />
+          <pointLight position={[6, 4, 10]} intensity={2} />
+          <directionalLight
+            position={[3.5, 4, -12]}
+            intensity={1}
+            color={'#fff'}
+          />
+          <directionalLight
+            position={[-2, 4, -12]}
+            intensity={1}
+            color={'#ad57ff'}
+          />
+          <directionalLight
+            position={[-4, 20, -6]}
+            intensity={1.5}
+            color={'#fff'}
+          />
+          <directionalLight
+            position={[-18, -9, 6]}
+            intensity={1}
+            color={'#fff'}
+          />
+          <directionalLight
+            position={[7, 20, -1]}
+            intensity={1}
+            color={'#fff'}
+          />
+          {/* <ambientLight intensity={1} /> */}
+          {/* <hemisphereLight color='#b1e1ff' groundColor='#000' intensity={1} /> */}
 
-          <Sky isRotating={isRotating} />
-          <LowPolyBird
+          {/* <Sky isRotating={isRotating} /> */}
+          {/* <SkyCyberpunk isRotating={isRotating} /> */}
+          {/* <SkyCity isRotating={isRotating} /> */}
+          {/* <SkyTokyo isRotating={isRotating} /> */}
+          <SkySkyline isRotating={isRotating} />
+          {/* <LowPolyBird
             position={lowPolyBirdPosition}
             scale={lowPolyBirdScale}
-          />
-          <PirateIsland
+          /> */}
+          {/* <PirateIsland
             isRotating={isRotating}
             setIsRotating={setIsRotating}
             setCurrentStage={setCurrentStage}
             position={islandPosition}
             rotation={[0.2, 2.7077, 0]}
             scale={islandScale}
+          /> */}
+          {/* <CyberpunkApartment
+            isRotating={isRotating}
+            setIsRotating={setIsRotating}
+            setCurrentStage={setCurrentStage}
+            position={tokyoPosition}
+            rotation={[0.2, 1, 0]}
+            scale={tokyoScale}
+          /> */}
+          <Tokyo
+            isRotating={isRotating}
+            setIsRotating={setIsRotating}
+            setCurrentStage={setCurrentStage}
+            position={tokyoPosition}
+            rotation={[0.2, 2.25, 0]}
+            scale={tokyoScale}
           />
-          <MainBird
+          {/* <MainBird
             isRotating={isRotating}
             position={mainBirdPosition}
             rotation={[0, 20.1, 0]}
             scale={mainBirdScale}
+          /> */}
+          <Hovercar
+            isRotating={isRotating}
+            position={hovercarPosition}
+            rotation={[0, 1.8, 0]}
+            scale={hovercarScale}
           />
         </Suspense>
       </Canvas>
