@@ -43,6 +43,23 @@ const Contact = () => {
     }, 3000);
   };
 
+  const adjustTrashBinForScreenSize = () => {
+    let screenScale: [number, number, number],
+      screenPosition: [number, number, number];
+
+    if (window.innerWidth < 768) {
+      screenScale = [2.5, 2.5, 2.5];
+      screenPosition = [0, -2, 0];
+    } else {
+      screenScale = [1.5, 1.5, 1.5];
+      screenPosition = [0.5, -0.5, 0];
+    }
+
+    return [screenScale, screenPosition];
+  };
+
+  const [trashBinScale, trashBinPosition] = adjustTrashBinForScreenSize();
+
   return (
     <section className='relative flex lg:flex-row flex-col max-container'>
       {alert.show && <Alert {...alert} />}
@@ -130,16 +147,10 @@ const Contact = () => {
           <Suspense fallback={<Loader />}>
             <TrashBin
               currentAnimation={currentAnimation}
-              position={[0.5, -0.5, 0]}
+              position={trashBinPosition}
               rotation={[13.1, 2.7, 0]}
-              scale={[1.5, 1.5, 1.5]}
+              scale={trashBinScale}
             />
-            {/* <Fox
-              currentAnimation={currentAnimation}
-              position={[0.5, 0.35, 0]}
-              rotation={[12.629, -0.6, 0]}
-              scale={[0.5, 0.5, 0.5]}
-            /> */}
           </Suspense>
         </Canvas>
       </div>

@@ -3,16 +3,8 @@ import { Suspense, useRef, useState } from 'react';
 
 import sakura from '../assets/sakura.mp3';
 import Loader from '../components/Loader';
-import Sky from '../models/Sky';
-import { MainBird } from '../models/MainBird';
-import LowPolyBird from '../models/LowPolyBird';
-import { PirateIsland } from '../models/PirateIsland';
 import HomeInfo from '../components/HomeInfo';
-import { CyberpunkApartment } from '../models/CyberPunkApartment';
-import SkyCyberpunk from '../models/SkyCyberpunk';
 import { Tokyo } from '../models/Tokyo';
-import SkyCity from '../models/SkyCity';
-import SkyTokyo from '../models/SkyTokyo';
 import SkySkyline from '../models/SkySkyline';
 import { Hovercar } from '../models/Hovercar';
 
@@ -28,44 +20,12 @@ const Home = () => {
     let screenScale: [number, number, number],
       screenPosition: [number, number, number];
 
-    // If screen width is less than 768px, adjust the scale and position
     if (window.innerWidth < 768) {
-      screenScale = [1.5, 1.5, 1.5];
-      screenPosition = [0, -1.5, 0];
+      screenScale = [0.4, 0.4, 0.4];
+      screenPosition = [0.5, -3, -3];
     } else {
       screenScale = [1, 1, 1];
       screenPosition = [0, -3, -4];
-    }
-
-    return [screenScale, screenPosition];
-  };
-
-  const adjustLowPolyBirdForScreenSize = () => {
-    let screenScale: [number, number, number],
-      screenPosition: [number, number, number];
-
-    // If screen width is less than 768px, adjust the scale and position
-    if (window.innerWidth < 768) {
-      screenScale = [1.5, 1.5, 1.5];
-      screenPosition = [0, -1.5, 0];
-    } else {
-      screenScale = [1.5, 1.5, 1.5];
-      screenPosition = [2, 2, -10];
-    }
-
-    return [screenScale, screenPosition];
-  };
-
-  const adjustIslandForScreenSize = () => {
-    let screenScale: [number, number, number],
-      screenPosition: [number, number, number];
-
-    if (window.innerWidth < 768) {
-      screenScale = [0.9, 0.9, 0.9];
-      screenPosition = [3.6, -2, -3.419];
-    } else {
-      screenScale = [2, 2, 2];
-      screenPosition = [1.6, -4, -14];
     }
 
     return [screenScale, screenPosition];
@@ -76,8 +36,8 @@ const Home = () => {
       screenPosition: [number, number, number];
 
     if (window.innerWidth < 768) {
-      screenScale = [0.9, 0.9, 0.9];
-      screenPosition = [3.6, -2, -3.419];
+      screenScale = [1, 1, 1];
+      screenPosition = [0, -2, -20];
     } else {
       screenScale = [2, 2, 2];
       screenPosition = [-1, 2, -20];
@@ -87,10 +47,7 @@ const Home = () => {
   };
 
   const [hovercarScale, hovercarPosition] = adjustHovercarForScreenSize();
-  const [lowPolyBirdScale, lowPolyBirdPosition] =
-    adjustLowPolyBirdForScreenSize();
   const [tokyoScale, tokyoPosition] = adjustTokyoForScreenSize();
-  const [islandScale, islandPosition] = adjustIslandForScreenSize();
 
   return (
     <section className='w-full h-screen relative'>
@@ -136,34 +93,10 @@ const Home = () => {
             intensity={1}
             color={'#fff'}
           />
-          {/* <ambientLight intensity={1} /> */}
-          {/* <hemisphereLight color='#b1e1ff' groundColor='#000' intensity={1} /> */}
+          <ambientLight intensity={1} />
+          <hemisphereLight color='#b1e1ff' groundColor='#000' intensity={1} />
 
-          {/* <Sky isRotating={isRotating} /> */}
-          {/* <SkyCyberpunk isRotating={isRotating} /> */}
-          {/* <SkyCity isRotating={isRotating} /> */}
-          {/* <SkyTokyo isRotating={isRotating} /> */}
           <SkySkyline isRotating={isRotating} />
-          {/* <LowPolyBird
-            position={lowPolyBirdPosition}
-            scale={lowPolyBirdScale}
-          /> */}
-          {/* <PirateIsland
-            isRotating={isRotating}
-            setIsRotating={setIsRotating}
-            setCurrentStage={setCurrentStage}
-            position={islandPosition}
-            rotation={[0.2, 2.7077, 0]}
-            scale={islandScale}
-          /> */}
-          {/* <CyberpunkApartment
-            isRotating={isRotating}
-            setIsRotating={setIsRotating}
-            setCurrentStage={setCurrentStage}
-            position={tokyoPosition}
-            rotation={[0.2, 1, 0]}
-            scale={tokyoScale}
-          /> */}
           <Tokyo
             isRotating={isRotating}
             setIsRotating={setIsRotating}
@@ -172,12 +105,6 @@ const Home = () => {
             rotation={[0.2, 2.25, 0]}
             scale={tokyoScale}
           />
-          {/* <MainBird
-            isRotating={isRotating}
-            position={mainBirdPosition}
-            rotation={[0, 20.1, 0]}
-            scale={mainBirdScale}
-          /> */}
           <Hovercar
             isRotating={isRotating}
             position={hovercarPosition}
