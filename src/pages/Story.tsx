@@ -10,7 +10,7 @@ const Story = () => {
   return (
     <section className='relative flex lg:flex-row flex-col max-container'>
       <div className='flex-1 min-w-[50%] flex flex-col gap-y-5'>
-        <h1 className='head-text'>Our Story & Philosophy</h1>
+        <h1 className='head-text tracking-widest'>OUR STORY & PHILOSOPHY</h1>
         <h2 className='text-2xl'>
           Welcome to Tokyo Supreme Coffee - Where Tradition Meets Modern Tokyo
         </h2>

@@ -10,7 +10,7 @@ const CoffeeGuide = () => {
   return (
     <section className='relative flex lg:flex-row flex-col max-container'>
       <div className='flex-1 min-w-[50%] flex flex-col gap-y-5'>
-        <h1 className='head-text'>Tokyo Coffee Culture Guide</h1>
+        <h1 className='head-text'>TOKYO COFFEE CULTURE GUIDE</h1>
         <h2 className='text-2xl'>
           Discovering Japan's Unique Coffee Traditions
         </h2>

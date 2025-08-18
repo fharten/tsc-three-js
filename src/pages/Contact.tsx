@@ -5,6 +5,7 @@ import useAlert from '../hooks/useAlert';
 import Loader from '../components/Loader';
 import Alert from '../components/Alert';
 import { TrashBin } from '../models/TrashBin';
+import Attribution from '../components/Attribution';
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -63,7 +64,6 @@ const Contact = () => {
   return (
     <section className='relative flex lg:flex-row flex-col max-container'>
       {alert.show && <Alert {...alert} />}
-
       <div className='flex-1 min-w-[50%] flex flex-col'>
         <h1 className='head-text'>Get in Touch</h1>
 
@@ -124,8 +124,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-
-      <div className='lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]'>
+      <div className='lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px] mb-20 mt-10'>
         <Canvas
           camera={{
             position: [0, 0, 5],
@@ -154,6 +153,13 @@ const Contact = () => {
           </Suspense>
         </Canvas>
       </div>
+      <Attribution
+        title='Sci-Fi Trash Bin [DispOS Systems]'
+        link='https://skfb.ly/oDnNV'
+        author='Oliver Triplett'
+        licence='Creative Commons Attribution'
+        licenceLink='http://creativecommons.org/licenses/by/4.0/'
+      />
     </section>
   );
 };

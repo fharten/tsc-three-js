@@ -8,4 +8,5 @@ export interface TrashBinGLTF extends GLTF {
     Mat_Sci_Fi_Trash_Bin: THREE.MeshStandardMaterial;
     ['Material.001']: THREE.MeshStandardMaterial;
   };
+  animations?: THREE.AnimationClip[];
 }

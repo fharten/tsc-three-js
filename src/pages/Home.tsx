@@ -6,7 +6,8 @@ import Loader from '../components/Loader';
 import HomeInfo from '../components/HomeInfo';
 import { Tokyo } from '../models/Tokyo';
 import SkySkyline from '../models/SkySkyline';
-import { Hovercar } from '../models/Hovercar';
+import Attribution from '../components/Attribution';
+import { LazyPanda } from '../models/LazyPanda';
 
 const Home = () => {
   const audioRef = useRef(new Audio(sakura));
@@ -16,7 +17,7 @@ const Home = () => {
   const [currentStage, setCurrentStage] = useState<number | null>(1);
   const [isRotating, setIsRotating] = useState<boolean>(false);
 
-  const adjustHovercarForScreenSize = () => {
+  const adjustLazyPandaForScreenSize = () => {
     let screenScale: [number, number, number],
       screenPosition: [number, number, number];
 
@@ -24,7 +25,7 @@ const Home = () => {
       screenScale = [0.4, 0.4, 0.4];
       screenPosition = [0.5, -3, -3];
     } else {
-      screenScale = [1, 1, 1];
+      screenScale = [1.5, 1.5, 1.5];
       screenPosition = [0, -3, -4];
     }
 
@@ -46,7 +47,7 @@ const Home = () => {
     return [screenScale, screenPosition];
   };
 
-  const [hovercarScale, hovercarPosition] = adjustHovercarForScreenSize();
+  const [lazyPandaScale, lazyPandaPosition] = adjustLazyPandaForScreenSize();
   const [tokyoScale, tokyoPosition] = adjustTokyoForScreenSize();
 
   return (
@@ -54,7 +55,6 @@ const Home = () => {
       <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
-
       <Canvas
         className={`w-full h-screen bg-transparent ${
           isRotating ? 'cursor-grabbing' : 'cursor-grab'
@@ -105,14 +105,26 @@ const Home = () => {
             rotation={[0.2, 2.25, 0]}
             scale={tokyoScale}
           />
-          <Hovercar
+          <LazyPanda
             isRotating={isRotating}
-            position={hovercarPosition}
+            position={lazyPandaPosition}
             rotation={[0, 1.8, 0]}
-            scale={hovercarScale}
+            scale={lazyPandaScale}
           />
         </Suspense>
       </Canvas>
+      <Attribution
+        title='Vaporwave Tokyo: Sketchfab 3D Editor Challenge'
+        link='https://skfb.ly/6DCIU'
+        author='William Domeyer'
+        licence='Creative Commons Attribution'
+        licenceLink='http://creativecommons.org/licenses/by/4.0/'
+        title2='Lazy panda'
+        link2='https://skfb.ly/oo87M'
+        author2='Manogna S'
+        licence2='Creative Commons Attribution'
+        licence2Link='http://creativecommons.org/licenses/by/4.0/'
+      />
     </section>
   );
 };

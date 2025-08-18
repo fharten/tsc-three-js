@@ -1,234 +1,206 @@
-import { meta, shopify, starbucks, tesla } from '../assets/images';
 import {
-  car,
-  contact,
-  css,
-  estate,
-  express,
-  git,
-  github,
-  html,
-  javascript,
-  linkedin,
-  mongodb,
-  motion,
-  mui,
-  nextjs,
-  nodejs,
-  pricewise,
-  react,
-  redux,
-  sass,
-  snapgram,
-  summiz,
-  tailwindcss,
-  threads,
-  typescript,
-} from '../assets/icons';
+  americano,
+  butterCroissant,
+  cappucino,
+  chocolateChipCookie,
+  coldBrew,
+  flatWhite,
+  hojichaLatte,
+  hotChocolate,
+  icedAmericano,
+  icedLatte,
+  matchaLatte,
+  matchaPoundCake,
+  mochaSupreme,
+  organicTeas,
+  seasonalFruitDanish,
+  singleOriginEspresso,
+} from '../assets/images';
+export const EspressoClassics = [
+  {
+    name: 'Single Origin Espresso',
+    description: 'Rich, complex, and vibrant. Rotating seasonal beans.',
+    price: [
+      { title: 'Single', sum: '¥400' },
+      { title: 'Double', sum: '¥500' },
+    ],
+    image: singleOriginEspresso,
+  },
+  {
+    name: 'Americano',
+    description: 'Smooth and balanced; espresso mellowed with hot water.',
+    price: [
+      { title: 'Small', sum: '¥450' },
+      { title: 'Large', sum: '¥550' },
+    ],
+    image: americano,
+  },
+  {
+    name: 'Cappuccino',
+    description: 'Velvety microfoam with a delicate dusting of cocoa.',
+    price: [
+      { title: 'Small', sum: '¥550' },
+      { title: 'Large', sum: '¥650' },
+    ],
+    image: cappucino,
+  },
+  {
+    name: 'Flat White',
+    description: 'A creamy balance of espresso and milk with a silky finish.',
+    price: [
+      { title: 'Small', sum: '¥550' },
+      { title: 'Medium', sum: '¥600' },
+    ],
+    image: flatWhite,
+  },
 
-export const skills = [
   {
-    imageUrl: css,
-    name: 'CSS',
-    type: 'Frontend',
-  },
-  {
-    imageUrl: express,
-    name: 'Express',
-    type: 'Backend',
-  },
-  {
-    imageUrl: git,
-    name: 'Git',
-    type: 'Version Control',
-  },
-  {
-    imageUrl: github,
-    name: 'GitHub',
-    type: 'Version Control',
-  },
-  {
-    imageUrl: html,
-    name: 'HTML',
-    type: 'Frontend',
-  },
-  {
-    imageUrl: javascript,
-    name: 'JavaScript',
-    type: 'Frontend',
-  },
-  {
-    imageUrl: mongodb,
-    name: 'MongoDB',
-    type: 'Database',
-  },
-  {
-    imageUrl: motion,
-    name: 'Motion',
-    type: 'Animation',
-  },
-  {
-    imageUrl: mui,
-    name: 'Material-UI',
-    type: 'Frontend',
-  },
-  {
-    imageUrl: nextjs,
-    name: 'Next.js',
-    type: 'Frontend',
-  },
-  {
-    imageUrl: nodejs,
-    name: 'Node.js',
-    type: 'Backend',
-  },
-  {
-    imageUrl: react,
-    name: 'React',
-    type: 'Frontend',
-  },
-  {
-    imageUrl: redux,
-    name: 'Redux',
-    type: 'State Management',
-  },
-  {
-    imageUrl: sass,
-    name: 'Sass',
-    type: 'Frontend',
-  },
-  {
-    imageUrl: tailwindcss,
-    name: 'Tailwind CSS',
-    type: 'Frontend',
-  },
-  {
-    imageUrl: typescript,
-    name: 'TypeScript',
-    type: 'Frontend',
+    name: 'Mocha Supreme',
+    description:
+      'Espresso blended with rich dark chocolate and steamed milk, topped with whipped cream.',
+    price: [
+      { title: 'Small', sum: '¥600' },
+      { title: 'Large', sum: '¥700' },
+    ],
+    image: mochaSupreme,
   },
 ];
 
-export const experiences = [
+export const PourOverSelection = [
   {
-    title: 'React.js Developer',
-    company_name: 'Starbucks',
-    icon: starbucks,
-    iconBg: '#accbe1',
-    date: 'March 2020 - April 2021',
-    points: [
-      'Developing and maintaining web applications using React.js and other related technologies.',
-      'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-      'Implementing responsive design and ensuring cross-browser compatibility.',
-      'Participating in code reviews and providing constructive feedback to other developers.',
-    ],
+    name: 'Guatemala Huehuetenango',
+    description: 'Bright citrus & caramel sweetness.',
+    price: [{ title: 'One size', sum: '¥650' }],
+    image: '../assets/images/guatemala-huehuetenango.png',
   },
   {
-    title: 'React Native Developer',
-    company_name: 'Tesla',
-    icon: tesla,
-    iconBg: '#fbc3bc',
-    date: 'Jan 2021 - Feb 2022',
-    points: [
-      'Developing and maintaining web applications using React.js and other related technologies.',
-      'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-      'Implementing responsive design and ensuring cross-browser compatibility.',
-      'Participating in code reviews and providing constructive feedback to other developers.',
-    ],
+    name: 'Ethiopia Yirgacheffe',
+    description: 'Floral aroma, jasmine & bergamot.',
+    price: [{ title: 'One size', sum: '¥700' }],
+    image: '../assets/images/ethiopia-yirgacheffe.png',
   },
   {
-    title: 'Web Developer',
-    company_name: 'Shopify',
-    icon: shopify,
-    iconBg: '#b7e4c7',
-    date: 'Jan 2022 - Jan 2023',
-    points: [
-      'Developing and maintaining web applications using React.js and other related technologies.',
-      'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-      'Implementing responsive design and ensuring cross-browser compatibility.',
-      'Participating in code reviews and providing constructive feedback to other developers.',
-    ],
-  },
-  {
-    title: 'Full stack Developer',
-    company_name: 'Meta',
-    icon: meta,
-    iconBg: '#a2d2ff',
-    date: 'Jan 2023 - Present',
-    points: [
-      'Developing and maintaining web applications using React.js and other related technologies.',
-      'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-      'Implementing responsive design and ensuring cross-browser compatibility.',
-      'Participating in code reviews and providing constructive feedback to other developers.',
-    ],
+    name: 'Sumatra Mandheling',
+    description: 'Earthy, full-bodied with chocolate depth.',
+    price: [{ title: 'One size', sum: '¥650' }],
+    image: '../assets/images/sumatra-mandheling.png',
   },
 ];
 
-export const socialLinks = [
+export const SeasonalAndSignature = [
   {
-    name: 'Contact',
-    iconUrl: contact,
-    link: '/contact',
+    name: 'Tokyo Sakura Latte',
+    description:
+      'Steamed milk infused with sakura essence, topped with pink sugar crystals.',
+    price: [
+      { title: 'Small', sum: '¥600' },
+      { title: 'Medium', sum: '¥650' },
+    ],
+    image: '../assets/images/tokyo-sakura-latte.png',
   },
   {
-    name: 'GitHub',
-    iconUrl: github,
-    link: 'https://github.com/YourGitHubUsername',
+    name: 'Matcha Espresso Fusion',
+    description: 'Layers of ceremonial-grade matcha and bold espresso.',
+    price: [
+      { title: 'Small', sum: '¥650' },
+      { title: 'Medium', sum: '¥700' },
+    ],
+    image: '../assets/images/matcha-espresso-fusion.png',
   },
   {
-    name: 'LinkedIn',
-    iconUrl: linkedin,
-    link: 'https://www.linkedin.com/in/YourLinkedInUsername',
+    name: 'Yuzu Honey Cold Brew',
+    description: 'Refreshing cold brew sweetened with local yuzu and honey.',
+    price: [{ title: 'One size', sum: '¥650' }],
+    image: '../assets/images/yuzu-honey-cold-brew.png',
   },
 ];
 
-export const projects = [
+export const ColdCoffeeCreations = [
   {
-    iconUrl: pricewise,
-    theme: 'btn-back-red',
-    name: 'Amazon Price Tracker',
-    description:
-      'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-    link: 'https://github.com/adrianhajdin/pricewise',
+    name: 'Iced Americano',
+    description: 'Crisp, clean, and refreshing.',
+    price: [
+      { title: 'Medium', sum: '¥500' },
+      { title: 'Large', sum: '¥550' },
+    ],
+    image: icedAmericano,
   },
   {
-    iconUrl: threads,
-    theme: 'btn-back-green',
-    name: 'Full Stack Threads Clone',
-    description:
-      'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-    link: 'https://github.com/adrianhajdin/threads',
+    name: 'Iced Latte',
+    description: 'Smooth espresso over chilled milk and ice.',
+    price: [
+      { title: 'Medium', sum: '¥550' },
+      { title: 'Large', sum: '¥600' },
+    ],
+    image: icedLatte,
   },
   {
-    iconUrl: car,
-    theme: 'btn-back-blue',
-    name: 'Car Finding App',
-    description:
-      'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-    link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
+    name: 'Cold Brew',
+    description: 'Slow-steeped 18 hours, naturally sweet and bold.',
+    price: [{ title: 'One size', sum: '¥600' }],
+    image: coldBrew,
+  },
+];
+
+export const NonCoffeeAndLight = [
+  {
+    name: 'Matcha Latte',
+    description: 'Creamy, earthy matcha with steamed milk.',
+    price: [
+      { title: 'Small', sum: '¥550' },
+      { title: 'Large', sum: '¥650' },
+    ],
+    image: matchaLatte,
   },
   {
-    iconUrl: snapgram,
-    theme: 'btn-back-pink',
-    name: 'Full Stack Instagram Clone',
-    description:
-      'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-    link: 'https://github.com/adrianhajdin/social_media_app',
+    name: 'Hojicha Latte',
+    description: 'Roasted green tea with a nutty, caramel-like depth.',
+    price: [
+      { title: 'Small', sum: '¥550' },
+      { title: 'Medium', sum: '¥600' },
+    ],
+    image: hojichaLatte,
   },
   {
-    iconUrl: estate,
-    theme: 'btn-back-black',
-    name: 'Real-Estate Application',
-    description:
-      'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-    link: 'https://github.com/adrianhajdin/projects_realestate',
+    name: 'Hot Chocolate',
+    description: 'Rich Belgian chocolate, topped with whipped cream.',
+    price: [
+      { title: 'Small', sum: '¥500' },
+      { title: 'Large', sum: '¥600' },
+    ],
+    image: hotChocolate,
   },
   {
-    iconUrl: summiz,
-    theme: 'btn-back-yellow',
-    name: 'AI Summarizer Application',
-    description:
-      'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-    link: 'https://github.com/adrianhajdin/project_ai_summarizer',
+    name: 'Organic Teas',
+    description: 'Earl Grey, Chamomile, or Jasmine.',
+    price: [{ title: 'Pot', sum: '¥450' }],
+    image: organicTeas,
+  },
+];
+
+export const SmallBitesAndPastries = [
+  {
+    name: 'Butter Croissant',
+    description: 'Flaky, buttery pastry from local bakery partners.',
+    price: [{ title: 'One size', sum: '¥300' }],
+    image: butterCroissant,
+  },
+  {
+    name: 'Matcha Pound Cake',
+    description: 'Moist, lightly sweet with earthy matcha flavor.',
+    price: [{ title: 'One size', sum: '¥350' }],
+    image: matchaPoundCake,
+  },
+  {
+    name: 'Seasonal Fruit Danish',
+    description: 'Crisp pastry topped with seasonal fruits.',
+    price: [{ title: 'One size', sum: '¥400' }],
+    image: seasonalFruitDanish,
+  },
+  {
+    name: 'Chocolate Chip Cookie',
+    description: 'Classic cookie with rich chocolate chips.',
+    price: [{ title: 'One size', sum: '¥250' }],
+    image: chocolateChipCookie,
   },
 ];

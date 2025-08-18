@@ -28,7 +28,7 @@ export function TrashBin({ currentAnimation, ...props }: PageProps) {
   const { nodes, materials, animations } = useGLTF(
     scene,
   ) as unknown as TrashBinGLTF;
-  const { actions } = useAnimations(animations, group);
+  const { actions } = useAnimations(animations || [], group);
 
   // This effect will run whenever the currentAnimation prop changes
   useEffect(() => {

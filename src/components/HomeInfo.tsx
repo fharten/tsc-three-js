@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 
-import { arrow } from '../assets/icons';
+import { ArrowRight } from 'lucide-react';
 
 const HomeInfo = ({ currentStage }: { currentStage: number | null }) => {
   if (currentStage === 1)
     return (
-      <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5'>
+      <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-stone-800 mx-5'>
         Hi, we're
-        <span className='font-semibold mx-2 text-white'>
-          Tokyo Supreme Coffee
+        <span className='font-semibold mx-2 font-chela tracking-widest'>
+          TOKYO SUPREME COFFEE
         </span>
         ✌️
         <br />
@@ -26,7 +26,7 @@ const HomeInfo = ({ currentStage }: { currentStage: number | null }) => {
 
         <Link to='/story' className='neo-brutalism-white neo-btn'>
           Philosophy
-          <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
+          <ArrowRight />
         </Link>
       </div>
     );
@@ -36,13 +36,13 @@ const HomeInfo = ({ currentStage }: { currentStage: number | null }) => {
     return (
       <div className='info-box'>
         <p className='font-medium text-center sm:text-xl'>
-          Your guide to Tokyo's unique coffee culture <br /> and local brewing
-          traditions.
+          Coffee like you've never experienced it. <br /> Not just coffee.{' '}
+          <span className='font-bold font-chela'>EXPERIENCE.</span>
         </p>
 
-        <Link to='/coffeeguide' className='neo-brutalism-white neo-btn'>
+        <Link to='/menu' className='neo-brutalism-white neo-btn'>
           Learn more
-          <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
+          <ArrowRight />
         </Link>
       </div>
     );
@@ -58,7 +58,7 @@ const HomeInfo = ({ currentStage }: { currentStage: number | null }) => {
 
         <Link to='/contact' className='neo-brutalism-white neo-btn'>
           Let's talk
-          <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
+          <ArrowRight />
         </Link>
       </div>
     );
