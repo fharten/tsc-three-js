@@ -16,7 +16,7 @@ import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import type { TokyoGLTF } from '../types/TokyoGLTF';
 
-import islandScene from '/assets/3d/tokyo.glb';
+import islandScene from '/assets/3d/tokyosmall.glb';
 
 interface pageProps {
   isRotating: boolean;
@@ -214,16 +214,16 @@ export function Tokyo({
 
       // Set the current stage based on the island's orientation
       switch (true) {
-        case normalizedRotation >= 3.5 && normalizedRotation <= 4.05:
+        case normalizedRotation >= 3.5 && normalizedRotation <= 4.5:
           setCurrentStage(4);
           break;
-        case normalizedRotation >= 5.6 && normalizedRotation <= 6:
+        case normalizedRotation >= 5 && normalizedRotation <= 6:
           setCurrentStage(3);
           break;
-        case normalizedRotation >= 0.5 && normalizedRotation <= 1:
+        case normalizedRotation >= 0.2 && normalizedRotation <= 1.2:
           setCurrentStage(2);
           break;
-        case normalizedRotation >= 1.8 && normalizedRotation <= 2.4:
+        case normalizedRotation >= 1.4 && normalizedRotation <= 2.4:
           setCurrentStage(1);
           break;
         default:
