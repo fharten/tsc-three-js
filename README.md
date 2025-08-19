@@ -12,11 +12,11 @@
 
 ## Deployment
 
-<a href="https://your-deployment-link-here.vercel.app/" target="_blank">
-  <p>https://your-deployment-link-here.vercel.app/</p>
+<a href="https://tsc-three-js.vercel.app/" target="_blank">
+  <p>https://tsc-three-js.vercel.app</p>
 </a>
 <div align="center">
-   <img src="public/screenshot.png" alt='screenshot of deployed site' />
+   <img src="public/demo/tsc-main.gif" alt='gif of deployed site' />
 </div>
 
 ## About This Project
