@@ -1,69 +1,53 @@
-# React + TypeScript + Vite
+<p align="center">
+  <a href="https://reactjs.org/" target="_blank">
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  </a>
+  <a href="https://threejs.org/" target="_blank">
+    <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white" />
+  </a>
+  <a href="https://tailwindcss.com/" target="_blank">
+    <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+  </a>
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Deployment
 
-Currently, two official plugins are available:
+<a href="https://your-deployment-link-here.vercel.app/" target="_blank">
+  <p>https://your-deployment-link-here.vercel.app/</p>
+</a>
+<div align="center">
+   <img src="public/screenshot.png" alt='screenshot of deployed site' />
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## About This Project
 
-## Expanding the ESLint configuration
+I wanted to create a **3D website** that immediately catches attention at first glance.  
+To achieve this, I imagined a **Tokyo coffee shop** and designed how it could be presented online in an interactive and playful way.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The project features **slight animations and 3D interactivity** to engage users and keep them interested while exploring the coffee shop experience.  
+It blends aesthetic design with technical creativity, giving the visitor a sense of stepping into a warm, modern Tokyo café.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+<ul>
+  <li>React</li>
+  <li>Three.js</li>
+  <li>Tailwind CSS</li>
+</ul>
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Setup
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Prerequisites
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+<ul>
+<li><a href="https://git-scm.com/" rel="nofollow">Git</a></li>
+<li><a href="https://nodejs.org/en" rel="nofollow">Node.js</a></li>
+<li><a href="https://www.npmjs.com/" rel="nofollow">npm</a></li>
+</ul>
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+
+```sh
+npm install
+npm run dev
 ```
