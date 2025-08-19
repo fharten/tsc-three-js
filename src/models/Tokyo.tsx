@@ -11,7 +11,7 @@
 
 import { useEffect, useRef } from 'react';
 import { a } from '@react-spring/three';
-import { useGLTF } from '@react-three/drei';
+import { useAnimations, useGLTF } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import type { TokyoGLTF } from '../types/TokyoGLTF';
@@ -36,7 +36,10 @@ export function Tokyo({
   const tokyoRef = useRef<THREE.Group>(null);
   // Get access to the Three.js renderer and viewport
   const { gl, viewport } = useThree();
-  const { nodes, materials } = useGLTF(islandScene) as unknown as TokyoGLTF;
+  const { nodes, materials, animations } = useGLTF(
+    islandScene,
+  ) as unknown as TokyoGLTF;
+  const { actions } = useAnimations(animations || [], tokyoRef);
 
   // Use a ref for the last mouse x position
   const lastX = useRef(0);
@@ -167,6 +170,10 @@ export function Tokyo({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
+
+  useEffect(() => {
+    actions['Take 001']?.play();
+  }, [actions]);
 
   // This function is called on each frame update
   useFrame(() => {

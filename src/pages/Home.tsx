@@ -64,37 +64,12 @@ const Home = () => {
         <Suspense fallback={<Loader />}>
           <directionalLight
             position={[1, 1, 1]}
-            intensity={1}
+            intensity={0.5}
             color={'#ad57ff'}
           />
           <pointLight position={[6, 4, 10]} intensity={2} />
-          <directionalLight
-            position={[3.5, 4, -12]}
-            intensity={1}
-            color={'#fff'}
-          />
-          <directionalLight
-            position={[-2, 4, -12]}
-            intensity={1}
-            color={'#ad57ff'}
-          />
-          <directionalLight
-            position={[-4, 20, -6]}
-            intensity={1.5}
-            color={'#fff'}
-          />
-          <directionalLight
-            position={[-18, -9, 6]}
-            intensity={1}
-            color={'#fff'}
-          />
-          <directionalLight
-            position={[7, 20, -1]}
-            intensity={1}
-            color={'#fff'}
-          />
-          <ambientLight intensity={1} />
-          <hemisphereLight color='#b1e1ff' groundColor='#000' intensity={1} />
+          <ambientLight intensity={0.5} />
+          <hemisphereLight color='#b1e1ff' groundColor='#000' intensity={2} />
 
           <SkySkyline isRotating={isRotating} />
           <Tokyo

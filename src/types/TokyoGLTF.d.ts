@@ -90,4 +90,5 @@ export interface TokyoGLTF extends GLTF {
     alpha_0: THREE.MeshStandardMaterial;
     Material_5518: THREE.MeshStandardMaterial;
   };
+  animations?: THREE.AnimationClip[];
 }
