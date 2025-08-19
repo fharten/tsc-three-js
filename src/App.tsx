@@ -5,7 +5,6 @@ import Contact from './pages/Contact';
 import Datenschutz from './pages/Datenschutz';
 import Story from './pages/Story';
 import Footer from './components/Footer';
-import CoffeeGuide from './pages/CoffeeGuide';
 import Impressum from './pages/Impressum';
 import Menu from './pages/Menu';
 
@@ -18,7 +17,6 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/story' element={<Story />} />
-          <Route path='/coffeeguide' element={<CoffeeGuide />} />
           <Route path='/impressum' element={<Impressum />} />
           <Route path='/datenschutz' element={<Datenschutz />} />
           <Route path='/menu' element={<Menu />} />

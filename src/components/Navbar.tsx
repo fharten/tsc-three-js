@@ -12,20 +12,21 @@ const Navbar = () => {
       </NavLink>
       <nav className='flex text-lg gap-5 md:gap-7 font-medium'>
         <NavLink
-          to='/story'
-          className={({ isActive }) =>
-            isActive ? 'text-[#91d8eb]' : 'text-stone-50'
-          }
-        >
-          Our Story
-        </NavLink>
-        <NavLink
           to='/menu'
           className={({ isActive }) =>
             isActive ? 'text-[#91d8eb]' : 'text-stone-50'
           }
         >
           Menu
+        </NavLink>
+
+        <NavLink
+          to='/story'
+          className={({ isActive }) =>
+            isActive ? 'text-[#91d8eb]' : 'text-stone-50'
+          }
+        >
+          Our Story
         </NavLink>
 
         <NavLink
