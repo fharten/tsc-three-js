@@ -23,9 +23,6 @@ function Impressum() {
           <p className='italic text-gray-500'>
             Bitte versenden Sie keine Pakete an dieser Adresse.
           </p>
-          <p>
-            <strong>Vertreten durch:</strong> Vor- und Nachname
-          </p>
         </section>
 
         <section className='space-y-4 mt-6'>
